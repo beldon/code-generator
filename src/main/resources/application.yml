@@ -1,0 +1,40 @@
+spring:
+  jpa:
+    database-platform: me.beldon.core.SQLiteDialect
+#    hibernate:
+#      ddl-auto: create
+  datasource:
+    url: jdbc:sqlite:res\\generate.db
+    username: root
+    password: root
+    driver-class-name: org.sqlite.JDBC
+    type: com.alibaba.druid.pool.DruidDataSource
+    filters: stat
+    maxActive: 20
+    initialSize: 1
+    maxWait: 60000
+    minIdle: 1
+    timeBetweenEvictionRunsMillis: 60000
+    minEvictableIdleTimeMillis: 300000
+    validationQuery: select 'x'
+    testWhileIdle: true
+    testOnBorrow: false
+    testOnReturn: false
+    poolPreparedStatements: true
+    maxOpenPreparedStatements: 20
+
+javafx:
+    title: Beldon Tools
+    appicons:
+          - /image/logo.png
+    stage:
+#         width: 800 # defaults to the size of the scene
+#         height: 600
+#         resizable: false # defaults to true
+#         style: utility # defaults to DECORATED see: javafx.stage.StageStyle
+
+banner:
+  location: banner.txt
+  charset: utf-8
+
+

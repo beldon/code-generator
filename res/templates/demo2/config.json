@@ -1,0 +1,27 @@
+{
+  "name": "Demo模板",
+  "author": "Beldon",
+  "url":"http://www.baidu.com",
+  "description": "我的模板文件",
+  "templates":[
+    {
+      "name": "Dao",
+      "description": "Dao文件",
+      "fileName":"dao.ftl",
+      "targetPackage": ".dao",
+      "targetFileName":"I${domainName!}Dao.java"
+    },{
+      "name": "Mapper",
+      "description": "Mapper文件",
+      "fileName": "mapper.ftl",
+      "targetPackage": ".dao",
+      "targetFileName":"I${domainName!}Dao.xml"
+    },{
+      "name": "Domain",
+      "description": "Domain文件",
+      "fileName": "domain.ftl",
+      "targetPackage": ".domain",
+      "targetFileName":"${domainName!}.java"
+    }
+  ]
+}
