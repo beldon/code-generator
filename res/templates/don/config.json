@@ -1,0 +1,44 @@
+{
+  "name": "Don模板",
+  "author": "Beldon",
+  "url":"http://blog.beldon.me",
+  "description": "Don程序的模板",
+  "templates":[
+    {
+      "name":"Domain",
+      "description": "Domain文件",
+      "basePath": "/src/main/kotlin",
+      "fileName":"domain.ftl",
+      "targetPackage": ".domain",
+      "targetFileName":"${domainName}.kt"
+    },{
+      "name": "Dao",
+      "description": "Dao文件",
+      "basePath": "/src/main/kotlin",
+      "fileName":"dao.ftl",
+      "targetPackage": ".dao",
+      "targetFileName":"I${domainName}Dao.kt"
+    },{
+      "name": "Mapper",
+      "description": "Mapper文件",
+      "basePath": "/src/main/kotlin",
+      "fileName":"mapper.ftl",
+      "targetPackage": ".dao",
+      "targetFileName":"I${domainName}Dao.xml"
+    },{
+      "name": "IService",
+      "description": "IService文件",
+      "basePath": "/src/main/kotlin",
+      "fileName":"iservice.ftl",
+      "targetPackage": ".service",
+      "targetFileName":"I${domainName}Service.kt"
+    },{
+      "name": "Service",
+      "description": "Service文件",
+      "basePath": "/src/main/kotlin",
+      "fileName":"service.ftl",
+      "targetPackage": ".service.impl",
+      "targetFileName":"${domainName}Service.kt"
+    }
+  ]
+}
