@@ -98,6 +98,7 @@ public class MySqlGenerateService implements IMySqlGenerateService {
         data.put("table", generateData.getTable());
         data.put("domainName", domainName); //实体类名称
         data.put("data", generateData); //生成的数据信息
+        data.put("url", generateData.getUrl()); //生成的数据信息
         data.put("columnDatas", columnDatas); //所有字段信息
         data.put("importType", importType); //所需要导入的包
         data.put("primaryData", primaryData); //主键
@@ -122,6 +123,9 @@ public class MySqlGenerateService implements IMySqlGenerateService {
      * @return
      */
     private String replace(String templateContent, Map<String, Object> data) {
+        if (StringUtils.isEmpty(templateContent)) {
+            return "";
+        }
         Configuration cfg = new Configuration();
         StringTemplateLoader stringLoader = new StringTemplateLoader();
         stringLoader.putTemplate("templateContent", templateContent);
