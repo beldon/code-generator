@@ -29,6 +29,7 @@ import me.beldon.module.template.service.ITemplateService;
 import me.beldon.module.window.service.IWindowService;
 import me.beldon.util.SSUtils;
 import org.controlsfx.control.Notifications;
+import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.util.StringUtils;
 
@@ -236,12 +237,15 @@ public class GenerateController implements Initializable {
             if (templateDetails == null) {
                 return;
             }
+
             generateData.setTemplateDetails(templateDetails);
             generateData.setTable(currentTables);
 
             List<TemplateFtl> templateFtls = templateDetails.getTemplates();
             for (TemplateFtl templateFtl : templateFtls) {
-                generateData.setTemplate(templateFtl);
+                TemplateFtl temp = new TemplateFtl();
+                BeanUtils.copyProperties(templateFtl,temp);
+                generateData.setTemplate(temp);
                 mySqlGenerateService.generate(generateData);
             }
 
