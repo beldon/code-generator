@@ -1,5 +1,5 @@
 {
-  "name": "Don Kotlin模板",
+  "name": "DonJava模板",
   "author": "Beldon",
   "url":"http://blog.beldon.me",
   "description": "Don程序的模板",
@@ -7,38 +7,33 @@
     {
       "name":"Domain",
       "description": "Domain文件",
-      "basePath": "/src/main/kotlin",
       "fileName":"domain.ftl",
       "targetPackage": ".domain",
-      "targetFileName":"${domainName}.kt"
+      "targetFileName":"${domainName}.java"
     },{
       "name": "Dao",
       "description": "Dao文件",
-      "basePath": "/src/main/kotlin",
       "fileName":"dao.ftl",
       "targetPackage": ".dao",
-      "targetFileName":"I${domainName}Dao.kt"
+      "targetFileName":"I${domainName}Dao.java"
     },{
       "name": "Mapper",
       "description": "Mapper文件",
-      "basePath": "/src/main/kotlin",
       "fileName":"mapper.ftl",
       "targetPackage": ".dao",
       "targetFileName":"I${domainName}Dao.xml"
     },{
       "name": "IService",
       "description": "IService文件",
-      "basePath": "/src/main/kotlin",
       "fileName":"iservice.ftl",
       "targetPackage": ".service",
-      "targetFileName":"I${domainName}Service.kt"
+      "targetFileName":"I${domainName}Service.java"
     },{
       "name": "Service",
       "description": "Service文件",
-      "basePath": "/src/main/kotlin",
       "fileName":"service.ftl",
       "targetPackage": ".service.impl",
-      "targetFileName":"${domainName}Service.kt"
+      "targetFileName":"${domainName}Service.java"
     }
   ]
 }
