@@ -8,7 +8,6 @@ import org.apache.ibatis.annotations.Select
 import org.apache.ibatis.annotations.Param
 import don.core.bean.Page
 import don.core.bean.Query
-import java.util.List
 
 /**
  * ${(table.tableComment)!}
@@ -31,7 +30,7 @@ interface ${className!} {
     fun updateByPrimaryKeySelective(${domainName?uncap_first!}: ${domainName!}): Int
 
     @Select("select * from ${(table.tableName)!} where ${(primaryData.column.columnName)!} = ${r"#{"}${(primaryData.name)!}${r"}"}")
-    fun selectByPrimaryKey(${(primaryData.name)!}: ${(primaryData.type.javaType)!}): ${domainName!}
+    fun selectByPrimaryKey(${(primaryData.name)!}: ${(primaryData.type.javaType)!}): ${domainName!}?
 
     @ResultMap("BaseResultMap")
     fun query(@Param("query") query: Query): List<${domainName!}>
