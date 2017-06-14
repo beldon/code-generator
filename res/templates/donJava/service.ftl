@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import ${(data.basePackage)!}.domain.${domainName!};
 import java.util.Optional;
+import org.springframework.util.Assert;
 
 /**
  * ${(table.tableComment)!}
@@ -21,13 +22,15 @@ public class ${className!} extends ServiceBase implements I${className!} {
     private I${domainName!}Dao ${domainName?uncap_first!}Dao;
 
     @Override
-    public Optional<${domainName!}> findById(String uid) {
+    public Optional<${domainName!}> findById(${(primaryData.type.javaType)!} ${(primaryData.name)!}) {
+        Assert.notNull(${(primaryData.name)!},"${(primaryData.name)!} is required");
         ${domainName} ${domainName?uncap_first!} = ${domainName?uncap_first!}Dao.selectByPrimaryKey(${(primaryData.name)!});
         return Optional.ofNullable(${domainName?uncap_first!});
      }
 
     @Override
-    public void deleteById(String uid) {
+    public void deleteById(${(primaryData.type.javaType)!} ${(primaryData.name)!}) {
+        Assert.notNull(${(primaryData.name)!},"${(primaryData.name)!} is required");
         ${domainName?uncap_first!}Dao.deleteByPrimaryKey(${(primaryData.name)!});
     }
 
