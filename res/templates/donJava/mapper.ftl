@@ -14,14 +14,14 @@
     <sql id="columns_no_id">
 <#list columnDatas as columnData>
     <#if columnData.column.columnKey != "PRI">
-        ${(columnData.column.columnName)!}<#if columnData_has_next>,</#if><!--${(columnData.column.columnComment)!}-->
+        `${(columnData.column.columnName)!}`<#if columnData_has_next>,</#if><!--${(columnData.column.columnComment)!}-->
     </#if>
 </#list>
     </sql>
 
     <!-- 包括id在内全部属性 -->
     <sql id="columns_all">
-        ${(primaryData.column.columnName)!},<include refid="columns_no_id"/>
+        `${(primaryData.column.columnName)!}`,<include refid="columns_no_id"/>
     </sql>
 
     <sql id="properties_no_id">
@@ -54,7 +54,7 @@
         <trim prefix="(" suffix=")" suffixOverrides="," >
         <#list columnDatas as columnData>
             <if test="${(columnData.name)!} != null" >
-                ${(columnData.column.columnName)!}<#if columnData_has_next>,</#if><!--${(columnData.column.columnComment)!}-->
+                `${(columnData.column.columnName)!}`<#if columnData_has_next>,</#if><!--${(columnData.column.columnComment)!}-->
              </if>
         </#list>
         </trim>
@@ -73,11 +73,11 @@
         <set >
         <#list columnDatas as columnData>
             <#if columnData.column.columnKey != "PRI">
-            ${(columnData.column.columnName)!}= ${r"#{"}${(columnData.name)!}${r"}"}<#if columnData_has_next>,</#if><!--${(columnData.column.columnComment)!}-->
+            `${(columnData.column.columnName)!}`= ${r"#{"}${(columnData.name)!}${r"}"}<#if columnData_has_next>,</#if><!--${(columnData.column.columnComment)!}-->
             </#if>
         </#list>
         </set>
-        where ${(primaryData.name)!} = ${r"#{"}${(primaryData.name)!}${r"}"}
+        where `${(primaryData.column.columnName)!}` = ${r"#{"}${(primaryData.name)!}${r"}"}
     </update>
     <!--更新非空-->
     <update id="updateByPrimaryKeySelective" parameterType="${(data.basePackage)!}.domain.${domainName!}" >
@@ -86,12 +86,12 @@
         <#list columnDatas as columnData>
             <#if columnData.column.columnKey != "PRI">
              <if test="${(columnData.name)!} != null" >
-                ${(columnData.column.columnName)!}= ${r"#{"}${(columnData.name)!}${r"}"}<#if columnData_has_next>,</#if><!--${(columnData.column.columnComment)!}-->
+                `${(columnData.column.columnName)!}`= ${r"#{"}${(columnData.name)!}${r"}"}<#if columnData_has_next>,</#if><!--${(columnData.column.columnComment)!}-->
              </if>
             </#if>
         </#list>
         </set>
-        where ${(primaryData.name)!} = ${r"#{"}${(primaryData.name)!}${r"}"}
+        where `${(primaryData.column.columnName)!}` = ${r"#{"}${(primaryData.name)!}${r"}"}
     </update>
 
     <select id="query" resultMap="BaseResultMap">
@@ -103,7 +103,7 @@
                         <trim suffixOverrides="AND">
                         <#list columnDatas as columnData>
                             <#if columnData.column.columnKey != "PRI">
-                            <if test="query.domain.${(columnData.name)!} != null">${(columnData.column.columnName)!}= ${r"#{"}query.domain.${(columnData.name)!}${r"}"}<#if columnData_has_next> AND </#if></if><!--${(columnData.column.columnComment)!}-->
+                            <if test="query.domain.${(columnData.name)!} != null">`${(columnData.column.columnName)!}`= ${r"#{"}query.domain.${(columnData.name)!}${r"}"}<#if columnData_has_next> AND </#if></if><!--${(columnData.column.columnComment)!}-->
                             </#if>
                         </#list>
                         </trim>
