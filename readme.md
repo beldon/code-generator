@@ -1,3 +1,6 @@
+
+[![Build Status](https://www.travis-ci.org/beldon/code-generator.svg?branch=master)](https://www.travis-ci.org/beldon/code-generator)
+
 ### 一个基于Freemarker的代码生成器
 
 #### 目标   
