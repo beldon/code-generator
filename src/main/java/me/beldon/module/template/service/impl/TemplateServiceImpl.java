@@ -51,10 +51,4 @@ public class TemplateServiceImpl implements TemplateService {
 
         return templateDetails;
     }
-
-    public static void main(String[] args) {
-        TemplateServiceImpl templateServiceImpl = new TemplateServiceImpl();
-        List<TemplateDetails> details = templateServiceImpl.getAllTemplates();
-        System.out.println("a");
-    }
 }

@@ -2,7 +2,7 @@ package me.beldon.module.database.service.impl;
 
 import me.beldon.module.database.service.DatabaseService;
 import me.beldon.module.database.service.MySqlService;
-import me.beldon.module.generate.domain.ConnectDb;
+import me.beldon.module.generate.bean.ConnectDb;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.datasource.DriverManagerDataSource;

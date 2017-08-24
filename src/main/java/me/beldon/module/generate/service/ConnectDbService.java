@@ -1,6 +1,6 @@
 package me.beldon.module.generate.service;
 
-import me.beldon.module.generate.domain.ConnectDb;
+import me.beldon.module.generate.bean.ConnectDb;
 
 import java.util.List;
 

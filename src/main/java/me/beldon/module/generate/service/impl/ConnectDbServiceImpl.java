@@ -1,6 +1,6 @@
 package me.beldon.module.generate.service.impl;
 
-import me.beldon.module.generate.domain.ConnectDb;
+import me.beldon.module.generate.bean.ConnectDb;
 import me.beldon.module.generate.service.ConnectDbService;
 import me.beldon.util.ObjectDataUtils;
 import me.beldon.util.SSUtils;

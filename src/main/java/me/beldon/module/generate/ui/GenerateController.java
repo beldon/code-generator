@@ -19,9 +19,9 @@ import me.beldon.module.database.bean.GenerateData;
 import me.beldon.module.database.entity.mysql.Tables;
 import me.beldon.module.database.service.DatabaseService;
 import me.beldon.module.database.service.MySqlService;
-import me.beldon.module.generate.domain.ConnectDb;
+import me.beldon.module.generate.bean.ConnectDb;
 import me.beldon.module.generate.service.ConnectDbService;
-import me.beldon.module.generate.service.MySqlGenerateService;
+import me.beldon.module.generate.service.GenerateService;
 import me.beldon.module.template.bean.TemplateDetails;
 import me.beldon.module.template.bean.TemplateFtl;
 import me.beldon.module.template.service.TemplateService;
@@ -61,7 +61,7 @@ public class GenerateController implements Initializable {
     public CheckBox generatePage;
     public CheckBox generatePojo;
     public CheckBox generateDao;
-    public CheckBox generateService;
+    public CheckBox generateServiceCheckBox;
     public ChoiceBox templateChoiceBox;
     @FXML
     private Label connectionLabel;
@@ -82,7 +82,7 @@ public class GenerateController implements Initializable {
     private DatabaseService databaseService;
 
     @Autowired
-    private MySqlGenerateService mySqlGenerateService;
+    private GenerateService generateService;
 
     @Autowired
     private TemplateService templateService;
@@ -245,7 +245,7 @@ public class GenerateController implements Initializable {
                 TemplateFtl temp = new TemplateFtl();
                 BeanUtils.copyProperties(templateFtl,temp);
                 generateData.setTemplate(temp);
-                mySqlGenerateService.generate(generateData);
+                generateService.generate(generateData);
             }
 
             Notifications.create().title("生成提示").text("生成成功！").position(Pos.BASELINE_CENTER).showInformation();

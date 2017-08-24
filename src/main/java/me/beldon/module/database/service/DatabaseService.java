@@ -1,6 +1,6 @@
 package me.beldon.module.database.service;
 
-import me.beldon.module.generate.domain.ConnectDb;
+import me.beldon.module.generate.bean.ConnectDb;
 import org.springframework.jdbc.core.JdbcTemplate;
 
 /**

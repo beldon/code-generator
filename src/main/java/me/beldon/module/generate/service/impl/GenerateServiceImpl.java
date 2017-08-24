@@ -11,14 +11,13 @@ import me.beldon.module.database.bean.DataType;
 import me.beldon.module.database.entity.mysql.Columns;
 import me.beldon.module.database.service.MySqlService;
 import me.beldon.module.database.service.MySqlTypeService;
-import me.beldon.module.generate.service.MySqlGenerateService;
+import me.beldon.module.generate.service.GenerateService;
 import me.beldon.module.template.bean.TemplateDetails;
 import me.beldon.module.template.bean.TemplateFtl;
 import me.beldon.util.SSUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.util.StringUtils;
-
 import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
@@ -32,9 +31,8 @@ import java.util.*;
  * Copyright (c) 2016/10/14, All Rights Reserved.
  * http://beldon.me
  */
-@SuppressWarnings("Duplicates")
 @Service
-public class MySqlGenerateServiceImpl implements MySqlGenerateService {
+public class GenerateServiceImpl implements GenerateService {
 
     @Autowired
     private freemarker.template.Configuration configuration;

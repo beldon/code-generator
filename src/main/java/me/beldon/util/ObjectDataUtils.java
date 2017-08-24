@@ -1,6 +1,6 @@
 package me.beldon.util;
 
-import me.beldon.module.generate.domain.ConnectDb;
+import me.beldon.module.generate.bean.ConnectDb;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 

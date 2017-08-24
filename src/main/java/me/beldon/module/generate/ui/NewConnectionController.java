@@ -7,7 +7,7 @@ import javafx.geometry.Pos;
 import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
-import me.beldon.module.generate.domain.ConnectDb;
+import me.beldon.module.generate.bean.ConnectDb;
 import me.beldon.module.generate.service.ConnectDbService;
 import me.beldon.module.window.service.WindowService;
 import org.controlsfx.control.Notifications;
@@ -28,8 +28,6 @@ import java.util.ResourceBundle;
 @FXMLController
 public class NewConnectionController implements Initializable {
     private final static Logger logger = LoggerFactory.getLogger(NewConnectionController.class);
-//    com.mysql.jdbc.Driver
-    public static String DRIVER_MYSQL = "com.mysql.jdbc.Driver";
 
     public ChoiceBox<String> dbTypeChoice;
     public ChoiceBox<String> encodingChoice;
@@ -122,7 +120,6 @@ public class NewConnectionController implements Initializable {
 
         String password = passwordField.getText();
         try {
-            Class.forName(DRIVER_MYSQL);
             String url = "jdbc:mysql://" + host + ":" + portText + "/" + schema + "?serverTimezone=UTC&characterEncoding=" + encodingChoice.getValue();
             DriverManager.getConnection(url, username, password);
             return true;

@@ -1,4 +1,4 @@
-package me.beldon.module.generate.domain;
+package me.beldon.module.generate.bean;
 
 import java.io.Serializable;
 

@@ -12,9 +12,8 @@ import java.awt.*;
 
 @SpringBootApplication
 public class GenerateApplication extends AbstractJavaFxApplicationSupport {
-
+    public static String DRIVER_MYSQL = "com.mysql.jdbc.Driver";
     public static void main(String[] args) {
-//        launchApp(GenerateApplication.class, MainView.class, args);
         launchApp(GenerateApplication.class, GenerateView.class, args);
     }
 
@@ -28,5 +27,15 @@ public class GenerateApplication extends AbstractJavaFxApplicationSupport {
             WindowServiceImpl windowServiceImpl = SpringContextUtil.getApplicationContext().getBean(WindowServiceImpl.class);
             windowServiceImpl.enableTray();
         });
+    }
+
+
+
+    static {
+        try {
+            Class.forName(DRIVER_MYSQL);
+        } catch (ClassNotFoundException e) {
+            e.printStackTrace();
+        }
     }
 }

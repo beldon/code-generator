@@ -9,7 +9,7 @@ import me.beldon.module.database.bean.GenerateData;
  * Copyright (c) 2016/10/14, All Rights Reserved.
  * http://beldon.me
  */
-public interface MySqlGenerateService {
+public interface GenerateService {
 
     /**
      * 生成代码
