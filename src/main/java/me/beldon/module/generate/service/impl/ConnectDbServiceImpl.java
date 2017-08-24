@@ -47,7 +47,8 @@ public class ConnectDbServiceImpl implements ConnectDbService {
 
     @Override
     public void clearAll() {
-        ObjectDataUtils.write(new HashMap<>());
+        cache.clear();
+        ObjectDataUtils.write(cache);
     }
 
 }
