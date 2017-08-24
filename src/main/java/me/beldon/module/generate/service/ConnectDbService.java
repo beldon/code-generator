@@ -9,12 +9,13 @@ import java.util.List;
  * Copyright (c)  2017/5/21, All Rights Reserved.
  * http://beldon.me
  */
-public interface IConnectDbService {
+public interface ConnectDbService {
 
     void save(ConnectDb connectDb);
-
 
     List<ConnectDb> findAll();
 
     void deleteById(String id);
+
+    void clearAll();
 }

@@ -1,20 +1,13 @@
 package me.beldon.module.generate.domain;
 
-import org.hibernate.annotations.GenericGenerator;
-
-import javax.persistence.*;
+import java.io.Serializable;
 
 /**
  * Created by Beldon.
  * Copyright (c)  2017/5/21, All Rights Reserved.
  * http://beldon.me
  */
-@Entity
-@Table(name = "connect_db")
-public class ConnectDb {
-    @GenericGenerator(name = "uuidGenerator", strategy = "uuid")
-    @Id
-    @GeneratedValue(generator = "uuidGenerator")
+public class ConnectDb implements Serializable{
     private String id;
 
     /**

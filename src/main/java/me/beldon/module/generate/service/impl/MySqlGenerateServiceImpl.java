@@ -7,11 +7,11 @@ import freemarker.template.Template;
 import freemarker.template.TemplateException;
 import me.beldon.module.database.bean.ColumnData;
 import me.beldon.module.database.bean.GenerateData;
-import me.beldon.module.database.bean.Type;
+import me.beldon.module.database.bean.DataType;
 import me.beldon.module.database.entity.mysql.Columns;
-import me.beldon.module.database.service.IMySqlService;
-import me.beldon.module.database.service.IMySqlTypeService;
-import me.beldon.module.generate.service.IMySqlGenerateService;
+import me.beldon.module.database.service.MySqlService;
+import me.beldon.module.database.service.MySqlTypeService;
+import me.beldon.module.generate.service.MySqlGenerateService;
 import me.beldon.module.template.bean.TemplateDetails;
 import me.beldon.module.template.bean.TemplateFtl;
 import me.beldon.util.SSUtils;
@@ -34,14 +34,14 @@ import java.util.*;
  */
 @SuppressWarnings("Duplicates")
 @Service
-public class MySqlGenerateService implements IMySqlGenerateService {
+public class MySqlGenerateServiceImpl implements MySqlGenerateService {
 
     @Autowired
     private freemarker.template.Configuration configuration;
     @Autowired
-    private IMySqlService mySqlService;
+    private MySqlService mySqlService;
     @Autowired
-    private IMySqlTypeService mySqlTypeService;
+    private MySqlTypeService mySqlTypeService;
 
 
     @Override
@@ -77,11 +77,11 @@ public class MySqlGenerateService implements IMySqlGenerateService {
             ColumnData columnData = new ColumnData();
             columnData.setName(SSUtils.underlineToCamel2(column.getColumnName()));
             columnData.setColumn(column);
-            Type type = mySqlTypeService.getType(column.getDataType());
-            columnData.setType(type);
+            DataType dataType = mySqlTypeService.getType(column.getDataType());
+            columnData.setDataType(dataType);
             columnDatas.add(columnData);
-            if (type != null && StringUtils.hasText(type.getJavaFullType())) {
-                String javaFullType = type.getJavaFullType();
+            if (dataType != null && StringUtils.hasText(dataType.getJavaFullType())) {
+                String javaFullType = dataType.getJavaFullType();
                 if (StringUtils.hasText(javaFullType) && !javaFullType.contains("java.lang")) {
                     importType.add(javaFullType);
                 }

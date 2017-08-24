@@ -9,12 +9,17 @@ import java.util.List;
  * Copyright (c)  2017/5/27, All Rights Reserved.
  * http://beldon.me
  */
-public interface ITemplateService {
+public interface TemplateService {
 
     /**
      * 模板目录
      */
     String TEMPLATE_PATH = "res/templates";
 
+    /**
+     * 获取所有模板
+     *
+     * @return
+     */
     List<TemplateDetails> getAllTemplates();
 }

@@ -14,7 +14,7 @@ import java.util.List;
  * Copyright (c) 2016/10/14, All Rights Reserved.
  * http://beldon.me
  */
-public interface IMySqlService {
+public interface MySqlService {
     /**
      * 获取所有Schemata
      *

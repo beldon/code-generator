@@ -8,7 +8,7 @@ import javafx.stage.Stage;
  * Copyright (c)  2017/5/15, All Rights Reserved.
  * http://beldon.me
  */
-public interface IWindowService {
+public interface WindowService {
     /**
      * 托盘
      */

@@ -23,14 +23,14 @@ interface ${className!} {
     fun insertSelective(${domainName?uncap_first!}: ${domainName!}): Int
 
     @Delete("delete from ${(table.tableName)!} where ${(primaryData.column.columnName)!} = ${r"#{"}${(primaryData.name)!}${r"}"}")
-    fun deleteByPrimaryKey(${(primaryData.name)!}: ${(primaryData.type.javaType)!}): Int
+    fun deleteByPrimaryKey(${(primaryData.name)!}: ${(primaryData.dataType.javaType)!}): Int
 
     fun updateByPrimaryKey(${domainName?uncap_first!}: ${domainName!}): Int
 
     fun updateByPrimaryKeySelective(${domainName?uncap_first!}: ${domainName!}): Int
 
     @Select("select * from ${(table.tableName)!} where ${(primaryData.column.columnName)!} = ${r"#{"}${(primaryData.name)!}${r"}"}")
-    fun selectByPrimaryKey(${(primaryData.name)!}: ${(primaryData.type.javaType)!}): ${domainName!}?
+    fun selectByPrimaryKey(${(primaryData.name)!}: ${(primaryData.dataType.javaType)!}): ${domainName!}?
 
     @ResultMap("BaseResultMap")
     fun query(@Param("query") query: Query): List<${domainName!}>

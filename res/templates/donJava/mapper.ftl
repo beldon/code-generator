@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="${package!}.${className!}">
-    <resultMap id="BaseResultMap" type="${(data.basePackage)!}.domain.${domainName!}">
+    <resultMap id="BaseResultMap" dataType="${(data.basePackage)!}.domain.${domainName!}">
     <#list columnDatas as columnData>
         <#if columnData.column.columnKey == "PRI">
-        <id column="${(columnData.column.columnName)!}" property="${(columnData.name)!}" jdbcType="${(columnData.type.jdbcType)!}" /> <!--${(columnData.column.columnComment)!}-->
+        <id column="${(columnData.column.columnName)!}" property="${(columnData.name)!}" jdbcType="${(columnData.dataType.jdbcType)!}" /> <!--${(columnData.column.columnComment)!}-->
         <#else >
-        <result column="${(columnData.column.columnName)!}" property="${(columnData.name)!}" jdbcType="${(columnData.type.jdbcType)!}" /> <!--${(columnData.column.columnComment)!}-->
+        <result column="${(columnData.column.columnName)!}" property="${(columnData.name)!}" jdbcType="${(columnData.dataType.jdbcType)!}" /> <!--${(columnData.column.columnComment)!}-->
         </#if>
     </#list>
     </resultMap>
@@ -115,10 +115,10 @@
                             <foreach collection="query.compares" item="compare" separator="AND">
                                 `${r"${"}compare.column${r"}"}`
                                 <choose>
-                                    <when test="compare.type == 'lt'">&lt;</when>
-                                    <when test="compare.type == 'lte'">&lt;=</when>
-                                    <when test="compare.type == 'gt'">&gt;</when>
-                                    <when test="compare.type == 'gte'">&gt;=</when>
+                                    <when test="compare.dataType == 'lt'">&lt;</when>
+                                    <when test="compare.dataType == 'lte'">&lt;=</when>
+                                    <when test="compare.dataType == 'gt'">&gt;</when>
+                                    <when test="compare.dataType == 'gte'">&gt;=</when>
                                 </choose>
                                 '${r"${"}compare.value${r"}"}'
                             </foreach>
@@ -158,7 +158,7 @@
                 <if test="query.orders != null">
                     order by
                     <foreach collection="query.orders" item="order" separator=",">
-                        `${r"${"}order.column${r"}"}` ${r"${"}order.type${r"}"}
+                        `${r"${"}order.column${r"}"}` ${r"${"}order.dataType${r"}"}
                     </foreach>
                 </if>
 

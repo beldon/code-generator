@@ -11,7 +11,7 @@ import java.util.Optional;
  */
 public interface ${className!} {
 
-    Optional<${domainName!}> findById(${(primaryData.type.javaType)!} ${(primaryData.name)!});
+    Optional<${domainName!}> findById(${(primaryData.dataType.javaType)!} ${(primaryData.name)!});
 
-    void deleteById(${(primaryData.type.javaType)!} ${(primaryData.name)!});
+    void deleteById(${(primaryData.dataType.javaType)!} ${(primaryData.name)!});
 }

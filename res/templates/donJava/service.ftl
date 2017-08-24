@@ -22,14 +22,14 @@ public class ${className!} extends ServiceBase implements I${className!} {
     private I${domainName!}Dao ${domainName?uncap_first!}Dao;
 
     @Override
-    public Optional<${domainName!}> findById(${(primaryData.type.javaType)!} ${(primaryData.name)!}) {
+    public Optional<${domainName!}> findById(${(primaryData.dataType.javaType)!} ${(primaryData.name)!}) {
         Assert.notNull(${(primaryData.name)!},"${(primaryData.name)!} is required");
         ${domainName} ${domainName?uncap_first!} = ${domainName?uncap_first!}Dao.selectByPrimaryKey(${(primaryData.name)!});
         return Optional.ofNullable(${domainName?uncap_first!});
      }
 
     @Override
-    public void deleteById(${(primaryData.type.javaType)!} ${(primaryData.name)!}) {
+    public void deleteById(${(primaryData.dataType.javaType)!} ${(primaryData.name)!}) {
         Assert.notNull(${(primaryData.name)!},"${(primaryData.name)!} is required");
         ${domainName?uncap_first!}Dao.deleteByPrimaryKey(${(primaryData.name)!});
     }

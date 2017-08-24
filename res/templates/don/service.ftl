@@ -18,8 +18,8 @@ class ${className!} : ServiceBase(), I${className!} {
     @Autowired
     private lateinit var ${domainName?uncap_first!}Dao: I${domainName!}Dao
 
-    override fun deleteById(${(primaryData.name)!}: ${(primaryData.type.javaType)!}) = ${domainName?uncap_first!}Dao.deleteByPrimaryKey(${(primaryData.name)!})
+    override fun deleteById(${(primaryData.name)!}: ${(primaryData.dataType.javaType)!}) = ${domainName?uncap_first!}Dao.deleteByPrimaryKey(${(primaryData.name)!})
 
-    override fun findById(${(primaryData.name)!}: ${(primaryData.type.javaType)!}) = ${domainName?uncap_first!}Dao.selectByPrimaryKey(${(primaryData.name)!})
+    override fun findById(${(primaryData.name)!}: ${(primaryData.dataType.javaType)!}) = ${domainName?uncap_first!}Dao.selectByPrimaryKey(${(primaryData.name)!})
 
 }

@@ -3,8 +3,7 @@ package me.beldon.module.database.service.impl;
 import me.beldon.module.database.entity.mysql.Columns;
 import me.beldon.module.database.entity.mysql.Schemata;
 import me.beldon.module.database.entity.mysql.Tables;
-import me.beldon.module.database.service.IMySqlService;
-import org.springframework.beans.factory.annotation.Autowired;
+import me.beldon.module.database.service.MySqlService;
 import org.springframework.jdbc.core.BeanPropertyRowMapper;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Service;
@@ -19,7 +18,7 @@ import java.util.List;
  */
 @SuppressWarnings({"SqlDialectInspection", "SqlNoDataSourceInspection"})
 @Service
-public class MySqlService implements IMySqlService {
+public class MySqlServiceImpl implements MySqlService {
 
     private JdbcTemplate jdbcTemplate;
 

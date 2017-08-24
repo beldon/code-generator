@@ -9,8 +9,7 @@ import javafx.stage.Modality;
 import javafx.stage.Stage;
 import javafx.util.Duration;
 import me.beldon.GenerateApplication;
-import me.beldon.module.generate.ui.NewConnectionView;
-import me.beldon.module.window.service.IWindowService;
+import me.beldon.module.window.service.WindowService;
 import me.beldon.util.SpringContextUtil;
 import org.controlsfx.control.Notifications;
 import org.springframework.stereotype.Service;
@@ -30,7 +29,7 @@ import java.util.Map;
  * http://beldon.me
  */
 @Service
-public class WindowService implements IWindowService {
+public class WindowServiceImpl implements WindowService {
     private TrayIcon trayIcon;
     private boolean first = true;
 

@@ -2,7 +2,7 @@ package me.beldon.module.template.service.impl;
 
 import com.alibaba.fastjson.JSON;
 import me.beldon.module.template.bean.TemplateDetails;
-import me.beldon.module.template.service.ITemplateService;
+import me.beldon.module.template.service.TemplateService;
 import org.springframework.stereotype.Service;
 
 import java.io.BufferedReader;
@@ -17,7 +17,7 @@ import java.util.List;
  * http://beldon.me
  */
 @Service
-public class TemplateService implements ITemplateService {
+public class TemplateServiceImpl implements TemplateService {
     @Override
     public List<TemplateDetails> getAllTemplates() {
         File file = new File(TEMPLATE_PATH);
@@ -53,8 +53,8 @@ public class TemplateService implements ITemplateService {
     }
 
     public static void main(String[] args) {
-        TemplateService templateService = new TemplateService();
-        List<TemplateDetails> details = templateService.getAllTemplates();
+        TemplateServiceImpl templateServiceImpl = new TemplateServiceImpl();
+        List<TemplateDetails> details = templateServiceImpl.getAllTemplates();
         System.out.println("a");
     }
 }

@@ -8,7 +8,7 @@ import org.springframework.jdbc.core.JdbcTemplate;
  * Copyright (c)  2017/5/26, All Rights Reserved.
  * http://beldon.me
  */
-public interface IDatabaseService {
+public interface DatabaseService {
 
   void switchConnect(ConnectDb connectDb);
 

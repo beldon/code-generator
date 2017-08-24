@@ -10,7 +10,7 @@ import me.beldon.module.database.entity.mysql.Columns;
  */
 public class ColumnData {
     private String name;
-    private Type type;
+    private DataType dataType;
     private Columns column;
 
     public String getName() {
@@ -21,12 +21,12 @@ public class ColumnData {
         this.name = name;
     }
 
-    public Type getType() {
-        return type;
+    public DataType getDataType() {
+        return dataType;
     }
 
-    public void setType(Type type) {
-        this.type = type;
+    public void setDataType(DataType dataType) {
+        this.dataType = dataType;
     }
 
     public Columns getColumn() {

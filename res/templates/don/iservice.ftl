@@ -9,7 +9,7 @@ import ${(data.basePackage)!}.domain.${domainName!}
  * ${(data.url)!}
  */
 interface ${className!} {
-    fun findById(${(primaryData.name)!}: ${(primaryData.type.javaType)!}): ${domainName!}?
+    fun findById(${(primaryData.name)!}: ${(primaryData.dataType.javaType)!}): ${domainName!}?
 
-    fun deleteById(${(primaryData.name)!}: ${(primaryData.type.javaType)!}): Int
+    fun deleteById(${(primaryData.name)!}: ${(primaryData.dataType.javaType)!}): Int
 }

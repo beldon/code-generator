@@ -7,11 +7,12 @@ import javafx.geometry.Pos;
 import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
-import javafx.stage.Stage;
 import me.beldon.module.generate.domain.ConnectDb;
-import me.beldon.module.generate.service.IConnectDbService;
-import me.beldon.module.window.service.IWindowService;
+import me.beldon.module.generate.service.ConnectDbService;
+import me.beldon.module.window.service.WindowService;
 import org.controlsfx.control.Notifications;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.util.StringUtils;
 
@@ -26,6 +27,8 @@ import java.util.ResourceBundle;
  */
 @FXMLController
 public class NewConnectionController implements Initializable {
+    private final static Logger logger = LoggerFactory.getLogger(NewConnectionController.class);
+//    com.mysql.jdbc.Driver
     public static String DRIVER_MYSQL = "com.mysql.jdbc.Driver";
 
     public ChoiceBox<String> dbTypeChoice;
@@ -43,10 +46,10 @@ public class NewConnectionController implements Initializable {
 
 
     @Autowired
-    private IConnectDbService connectDbService;
+    private ConnectDbService connectDbService;
 
     @Autowired
-    private IWindowService windowService;
+    private WindowService windowService;
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
@@ -124,6 +127,7 @@ public class NewConnectionController implements Initializable {
             DriverManager.getConnection(url, username, password);
             return true;
         } catch (Exception e) {
+            logger.info("Database connect error",e);
             Notifications.create().title("测试连接").text("连接失败！").position(Pos.BASELINE_CENTER).showWarning();
         }
 

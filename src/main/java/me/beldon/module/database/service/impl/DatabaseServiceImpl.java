@@ -1,7 +1,7 @@
 package me.beldon.module.database.service.impl;
 
-import me.beldon.module.database.service.IDatabaseService;
-import me.beldon.module.database.service.IMySqlService;
+import me.beldon.module.database.service.DatabaseService;
+import me.beldon.module.database.service.MySqlService;
 import me.beldon.module.generate.domain.ConnectDb;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
@@ -14,12 +14,12 @@ import org.springframework.stereotype.Service;
  * http://beldon.me
  */
 @Service
-public class DatabaseService implements IDatabaseService {
+public class DatabaseServiceImpl implements DatabaseService {
 
     private JdbcTemplate jdbcTemplate;
 
     @Autowired
-    private IMySqlService mySqlService;
+    private MySqlService mySqlService;
 
     @Override
     public void switchConnect(ConnectDb connectDb) {

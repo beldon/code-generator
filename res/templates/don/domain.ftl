@@ -15,6 +15,6 @@ class ${domainName!} {
     /**
      * ${(columnData.column.columnComment)!}
      */
-    var ${(columnData.name)!}: ${(columnData.type.javaType)!}? = null
+    var ${(columnData.name)!}: ${(columnData.dataType.javaType)!}? = null
 </#list>
 }

@@ -1,5 +1,7 @@
 package me.beldon.util;
 
+import java.util.UUID;
+
 /**
  * Created by Beldon.
  * Copyright (c) 2016/10/14, All Rights Reserved.
@@ -68,6 +70,10 @@ public class SSUtils {
             }
         }
         return sb.toString();
+    }
+
+    public static String getUUID() {
+        return UUID.randomUUID().toString().replaceAll("-", "");
     }
 
     public static void main(String[] args) {

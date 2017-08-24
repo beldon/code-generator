@@ -1,11 +1,8 @@
 package me.beldon.module.database.bean;
 
-import me.beldon.module.database.entity.mysql.Columns;
 import me.beldon.module.database.entity.mysql.Tables;
 import me.beldon.module.template.bean.TemplateDetails;
 import me.beldon.module.template.bean.TemplateFtl;
-
-import java.util.List;
 
 /**
  * 代码生成的基本信息
@@ -19,6 +16,9 @@ public class GenerateData {
      */
     private String author = "";
 
+    /**
+     * 作者url
+     */
     private String url = "";
 
     /**

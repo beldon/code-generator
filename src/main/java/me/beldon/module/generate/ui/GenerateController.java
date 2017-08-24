@@ -16,17 +16,16 @@ import javafx.stage.Stage;
 import javafx.util.Callback;
 import me.beldon.GenerateApplication;
 import me.beldon.module.database.bean.GenerateData;
-import me.beldon.module.database.entity.mysql.Columns;
 import me.beldon.module.database.entity.mysql.Tables;
-import me.beldon.module.database.service.IDatabaseService;
-import me.beldon.module.database.service.IMySqlService;
+import me.beldon.module.database.service.DatabaseService;
+import me.beldon.module.database.service.MySqlService;
 import me.beldon.module.generate.domain.ConnectDb;
-import me.beldon.module.generate.service.IConnectDbService;
-import me.beldon.module.generate.service.IMySqlGenerateService;
+import me.beldon.module.generate.service.ConnectDbService;
+import me.beldon.module.generate.service.MySqlGenerateService;
 import me.beldon.module.template.bean.TemplateDetails;
 import me.beldon.module.template.bean.TemplateFtl;
-import me.beldon.module.template.service.ITemplateService;
-import me.beldon.module.window.service.IWindowService;
+import me.beldon.module.template.service.TemplateService;
+import me.beldon.module.window.service.WindowService;
 import me.beldon.util.SSUtils;
 import org.controlsfx.control.Notifications;
 import org.springframework.beans.BeanUtils;
@@ -72,21 +71,21 @@ public class GenerateController implements Initializable {
     private Tables currentTables; //当前Tables
 
     @Autowired
-    private IWindowService windowService;
+    private WindowService windowService;
 
     @Autowired
-    private IConnectDbService connectDbService;
+    private ConnectDbService connectDbService;
 
     @Autowired
-    private IMySqlService mySqlService;
+    private MySqlService mySqlService;
     @Autowired
-    private IDatabaseService databaseService;
+    private DatabaseService databaseService;
 
     @Autowired
-    private IMySqlGenerateService mySqlGenerateService;
+    private MySqlGenerateService mySqlGenerateService;
 
     @Autowired
-    private ITemplateService templateService;
+    private TemplateService templateService;
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {

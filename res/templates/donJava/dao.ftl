@@ -24,7 +24,7 @@ public interface ${className!} {
     int insertSelective(${domainName!} ${domainName?uncap_first!});
 
     @Delete("delete from ${(table.tableName)!} where ${(primaryData.column.columnName)!} = ${r"#{"}${(primaryData.name)!}${r"}"}")
-    int deleteByPrimaryKey(${(primaryData.type.javaType)!} ${(primaryData.name)!});
+    int deleteByPrimaryKey(${(primaryData.dataType.javaType)!} ${(primaryData.name)!});
 
     int updateByPrimaryKey(${domainName!} ${domainName?uncap_first!});
 
@@ -32,7 +32,7 @@ public interface ${className!} {
 
     @Select("select * from ${(table.tableName)!} where ${(primaryData.column.columnName)!} = ${r"#{"}${(primaryData.name)!}${r"}"}")
     @ResultMap("BaseResultMap")
-    ${domainName!} selectByPrimaryKey(${(primaryData.type.javaType)!} ${(primaryData.name)!});
+    ${domainName!} selectByPrimaryKey(${(primaryData.dataType.javaType)!} ${(primaryData.name)!});
 
     @ResultMap("BaseResultMap")
     List<${domainName!}> query(@Param("query") Query query);

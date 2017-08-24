@@ -5,16 +5,16 @@ package me.beldon.module.database.bean;
  * Copyright (c) 2016/10/18, All Rights Reserved.
  * http://beldon.me
  */
-public class Type {
+public class DataType {
     private String mysqlType;
     private String jdbcType;
     private String javaType;
     private String javaFullType;
 
-    public Type() {
+    public DataType() {
     }
 
-    public Type(String mysqlType, String jdbcType, String javaType, String javaFullType) {
+    public DataType(String mysqlType, String jdbcType, String javaType, String javaFullType) {
         this.mysqlType = mysqlType;
         this.jdbcType = jdbcType;
         this.javaType = javaType;
